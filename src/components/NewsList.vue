@@ -14,8 +14,10 @@
                   <img id="cardimg" v-bind:src=article.urlToImage alt="tried">
                   <div class="card_body">                    
                     <div class="headline">{{article.title}}</div>
-                    <div class="content"> {{article.content}}</div>
+                    <div class="content"> {{article.description}}</div>
+                    <a id="readmore" v-bind:href=article.url>Read more</a>
                   </div>
+                  
                 
               </div>   
               </li>
@@ -74,34 +76,33 @@ ul{
     grid-gap :30px;
 }
 
-li{
+li.news__item{
     list-style: none; 
     border: 1px solid lightgray;
     border-radius: 10px;
     border-bottom: 5px solid lightseagreen;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    overflow: hidden;
+    overflow: hidden; 
 }
 
 .card{
      
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
    
 }
  #cardimg{
         width: 100%;
-        height: 200px;
+        height:300px; 
         object-fit: cover;
        
     }
 
 .card_body{
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
+    display: flex;
+    flex-direction: column;
     gap:20px;
     padding: 20px;
     
@@ -119,4 +120,23 @@ li{
     word-wrap: break-word;
     text-align: justify;
 }
+
+#readmore,#readmore:link{
+    width: 100px;
+    height:30px; 
+    
+    border:1px ;
+    border-radius: 5px;
+    border-bottom: 2px solid lightskyblue;
+    text-align: center; 
+    vertical-align: middle;
+    text-decoration: none;
+    font-weight: bold;
+    font-size:15px;
+}
+
+#readmore:hover{
+   background-color: rgba(144, 238, 144, 0.277); 
+}
+
 </style>
